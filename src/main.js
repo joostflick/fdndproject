@@ -37,23 +37,39 @@ function getGHUser(username) {
 }
 
 // Get organisation
-function getGHTeam(team) {
-    let result = {};
-    fetch('https://api.github.com/orgs/' + team)
-        .then(res => res.json())
-        .then(json => {
-            console.log(json)
-            result.id = json.id;
-            result.name = json.name;
-            result.bio = json.description;
-            result.reposUrl = json.repos_url;
-        })
-    return result;
-}
+// function getGHTeam(team) {
+//     let result = {};
+//     fetch('https://api.github.com/orgs/' + team)
+//         .then(res => res.json())
+//         .then(json => {
+//             console.log(json)
+//             result.id = json.id;
+//             result.name = json.name;
+//             result.bio = json.description;
+//             result.reposUrl = json.repos_url;
+//         })
+//     return result;
+// }
+
+// function getGHRepos(team) {
+//     let result = {};
+//     fetch('https://api.github.com/orgs/' + team + '/repos')
+//         .then(res => res.json())
+//         .then(json => {
+//             console.log(json)
+//             result.id = json.id;
+//             result.name = json.name;
+//             result.bio = json.description;
+//             result.reposUrl = json.repos_url;
+//         })
+//     return result;
+// }
+
 
 
 
 
 
 console.log(getGHUser('joostflick'))
-console.log(getGHTeam('fdnd-task'))
+// console.log(getGHTeam('fdnd-task'))
+// console.log(getGHRepos('fdnd-task'))

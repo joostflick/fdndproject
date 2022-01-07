@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Eens even kijken of we wat github gegevens kunnen ophalen"/>
+    <HelloWorld msg="De FDND repos"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld.vue';
 export default {
   name: 'App',
   components: {
