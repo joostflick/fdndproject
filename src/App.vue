@@ -2,7 +2,7 @@
   <div id="app">
     <Header></Header>
     <ul>
-      <li v-for="sprint in sprints" :key="sprint.number">
+      <li v-for="sprint in sprints" :key="sprint.number" class="navigation-item">
         <router-link :to="{
           path: '/sprint/' + sprint.number,
           query: {
@@ -136,6 +136,10 @@ body {
 }
 ul {
   list-style: none;
+}
+
+.navigation-item > a {
+  color: #7ce7c9;
 }
 
 .circled {

@@ -26,10 +26,15 @@ export default {
   .tile {
     margin: 10px;
     padding: 10px;
-    background-color: rgba(128, 128, 128, 0.71);
+    background-color: #050840;
+    color: white;
     min-height: 10em;
     max-width: 50vw;
     min-width: 300px;
+  }
+
+  a {
+    color: #7ce7c9;
   }
 
 </style>

@@ -88,8 +88,14 @@ export default {
   }
   .sprint > div {
     background-color: #9D7BEB;
-    width: 80vw;
+    width: 60vw;
     margin: 1em 0 1em 0;
+    padding: 0 4em;
+  }
+
+  .title {
+    background-color: transparent !important;
+    color: #7ce7c9;
   }
 
 </style>
