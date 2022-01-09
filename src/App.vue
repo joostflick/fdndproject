@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <HelloWorld msg="De FDND repos"/>
+    <router-link to="/home">FDND repos</router-link>
+    <router-link to="/sprint/2">Sprint 2</router-link>
+    <router-link to="/sprint/1">Sprint 1</router-link>
+    <router-view :key="$route.fullPath"></router-view>
+<!--    <HelloWorld msg="De FDND repos"/>-->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  name: 'App'
 }
 </script>
 
@@ -22,5 +22,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  background-color: #050840;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div>
+    <h1>FDND repos</h1>
     <ul>
       <li v-for="repo in repos" :key="repo.id">
         <Opdracht :data="repo"></Opdracht>
@@ -39,9 +39,6 @@ export default {
         .then(json => {
           this.repos = json
         })
-  },
-  props: {
-    msg: String
   }
 }
 

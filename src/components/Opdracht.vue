@@ -7,7 +7,7 @@
         <a :href="data.html_url">Bekijk de repo</a>
       </li>
       <li>
-        <a href="/projectpagina">Bekijk de projectpagina</a>
+        <router-link :to="'projectpagina/' + data.id">Bekijk de projectpagina</router-link>
       </li>
     </ul>
   </div>
