@@ -1,7 +1,6 @@
 <template>
   <div class="tile">
-    <h2>{{ this.$route.params.id }}</h2>
-    <h3>{{ this.repo.full_name }}</h3>
+    <h2>{{ this.repo.full_name }}</h2>
     <p>{{ this.repo.description }}</p>
     <a :href="this.repo.html_url">Bekijk op github</a>
   </div>
@@ -11,15 +10,6 @@
 export default {
   name: "OpdrachtDetail",
   methods: {
-    getGHRepo(id) {
-      let result = []
-      fetch('https://api.github.com/repositories/' + id)
-          .then(res => res.json())
-          .then(json => {
-            result = json
-          })
-      return result
-    }
   },
   data() {
     return {

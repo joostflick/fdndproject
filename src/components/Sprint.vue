@@ -1,7 +1,7 @@
 <template>
 <div class="sprint">
   <div class="title">
-    <h1>Sprint {{ this.sprint }}, {{ this.$route.query.sprint.name }}</h1>
+    <h1>{{ this.sprint }} - {{ this.$route.query.sprint.name }}</h1>
   </div>
   <div class="about">
     <h2>Over deze sprint</h2>

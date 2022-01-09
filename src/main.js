@@ -4,7 +4,6 @@ import App from './App.vue'
 import Overzicht from "@/components/Overzicht"
 import OpdrachtDetail from "@/components/OpdrachtDetail"
 import Sprint from "@/components/Sprint";
-// import fetch from "node-fetch";
 
 Vue.config.productionTip = false
 

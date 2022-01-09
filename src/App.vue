@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-link to="/home">FDND repos</router-link>
+    <Header></Header>
     <ul>
       <li v-for="sprint in sprints" :key="sprint.number">
         <router-link :to="{
@@ -9,17 +9,21 @@
             sprint: sprint
           }
         }">
-          Sprint {{ sprint.number }}</router-link>
+          {{ sprint.number }} - {{ sprint.name }}</router-link>
       </li>
     </ul>
     <router-view :key="$route.fullPath"></router-view>
-<!--    <HelloWorld msg="De FDND repos"/>-->
   </div>
 </template>
 
 <script>
+import Header from "@/components/Header";
+
 export default {
   name: 'App',
+  components: {
+    Header
+  },
   data() {
     return {
       sprints: [
@@ -126,9 +130,46 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 body {
   background-color: #050840;
+}
+ul {
+  list-style: none;
+}
+
+.circled {
+  color: #7ce7c9;
+  justify-self: start;
+  border: 3px solid #7ce7c9;
+  font-weight: 100;
+  border-radius: calc(4 * 0.5rem);
+  padding: 0.5rem 2rem;
+  box-shadow: -0.6rem 0.3rem 0 0 #7ce7c9;
+  margin-left: 1rem;
+}
+
+.squared {
+  color: #7ce7c9;
+  justify-self: start;
+  border: 3px solid #7ce7c9;
+  font-weight: 100;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  box-shadow: -0.6rem 0.3rem 0 0 #7ce7c9;
+  margin-left: 1rem;
+}
+
+.input {
+  color: #7ce7c9;
+  border: 3px solid #7ce7c9;
+  border-radius: calc(4 * 0.5rem);
+  padding: 0.5rem 2rem;
+  background-color: #050840;
+  font-size: 1rem;
+}
+.input::placeholder {
+  color: #7ce7c9;
+  font-size: 1rem;
 }
 </style>

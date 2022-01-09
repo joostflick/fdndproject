@@ -4,10 +4,10 @@
     <p>{{ data.description }}</p>
     <ul>
       <li>
-        <a :href="data.html_url">Bekijk de repo</a>
+        <a :href="data.html_url" target="_blank">Bekijk op github</a>
       </li>
       <li>
-        <router-link :to="'projectpagina/' + data.id">Bekijk de projectpagina</router-link>
+        <router-link :to="'/projectpagina/' + data.id">Bekijk de projectpagina</router-link>
       </li>
     </ul>
   </div>
