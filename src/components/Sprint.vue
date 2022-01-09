@@ -1,13 +1,11 @@
 <template>
 <div class="sprint">
   <div class="title">
-    <h1>Sprint 2</h1>
+    <h1>Sprint {{ this.sprint }}, {{ this.$route.query.sprint.name }}</h1>
   </div>
   <div class="about">
     <h2>Over deze sprint</h2>
-    <p>Het programma van FDND bestaat uit 4 semesters. Semester 1, 2 en 3 bestaan ieder uit 6 sprints. Ieder sprint heeft een eigen thema, waarin bijpassende opdrachten/leertaken worden aangeboden. Het 4e semester bestaat uit een einproject en vrije invulling.
-
-      De vaardigheden van deze sprint zijn onderverdeeld in subtasks</p>
+    <p>{{ this.$route.query.sprint.description }}</p>
   </div>
   <div class="subtasks">
     <ul>
@@ -63,7 +61,7 @@ export default {
       ],
       assignments: [],
       team: 'fdnd-task',
-      sprint: this.$route.params.sprint,
+      sprint: this.$route.params.sprintNr,
     }
   },
   mounted: function() {

@@ -13,7 +13,7 @@ Vue.use(VueRouter)
 const routes = [
     { path: '/home', component: Overzicht },
     { path: '/projectpagina/:id', component: OpdrachtDetail },
-    { path: '/sprint/:sprint', component: Sprint }
+    { path: '/sprint/:sprintNr', component: Sprint }
 ]
 
 const router = new VueRouter({
