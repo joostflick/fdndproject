@@ -1,6 +1,6 @@
 <template>
   <div class="subtask">
-    <h3>{{ subtask.name }}</h3>
+    <h3>{{ subtask.title }}</h3>
     <p>{{ subtask.description }}</p>
   </div>
 </template>

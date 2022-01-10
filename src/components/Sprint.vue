@@ -9,7 +9,7 @@
   </div>
   <div class="subtasks">
     <ul>
-      <li v-for="subtask in subtasks" :key="subtask.id">
+      <li v-for="subtask in this.$route.query.sprint.gedragscriteria " :key="subtask.id">
         <Subtask :subtask="subtask"></Subtask>
       </li>
     </ul>
@@ -37,28 +37,6 @@ export default {
   },
   data() {
     return {
-      subtasks: [
-        {
-          id: 0,
-          name: 'Subtask 1',
-          description: 'Dit is subtask 1'
-        },
-        {
-          id: 1,
-          name: 'Subtask 2',
-          description: 'Dit is subtask 2'
-        },
-        {
-          id: 2,
-          name: 'Subtask 3',
-          description: 'Dit is subtask 3'
-        },
-        {
-          id: 3,
-          name: 'Subtask 4',
-          description: 'Dit is subtask 4'
-        }
-      ],
       assignments: [],
       team: 'fdnd-task',
       sprint: this.$route.params.sprintNr,

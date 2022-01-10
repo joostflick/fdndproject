@@ -34,11 +34,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-              'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-              'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-              'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-              'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-              'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         },
@@ -49,11 +49,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-            'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-            'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-            'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-            'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-            'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         },
@@ -64,11 +64,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-            'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-            'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-            'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-            'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-            'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         },
@@ -79,11 +79,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-            'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-            'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-            'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-            'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-            'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         },
@@ -94,11 +94,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-            'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-            'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-            'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-            'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-            'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         },
@@ -109,11 +109,11 @@ export default {
               '\n' +
               'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
           gedragscriteria: [
-            'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.',
-            'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.',
-            'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.',
-            'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.',
-            'Je luistert naar wat een ander zegt en neemt dit serieus.'
+            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
           ],
           onderwerpen: []
         }

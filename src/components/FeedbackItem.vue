@@ -2,6 +2,7 @@
   <div class="feedbackitem">
     <div :class="'tile ' + this.feedback.role">
       <h1>{{ this.feedback.author }}</h1>
+      <p>{{ this.feedback.dateCreated }}</p>
       <p>{{ this.feedback.content }}</p>
     </div>
   </div>
