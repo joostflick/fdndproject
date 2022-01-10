@@ -2,8 +2,9 @@ import Vue from 'vue/dist/vue.js'
 import VueRouter from "vue-router"
 import App from './App.vue'
 import Overzicht from "@/components/Overzicht"
-import OpdrachtDetail from "@/components/OpdrachtDetail"
+import Projectpagina from "@/components/Projectpagina"
 import Sprint from "@/components/Sprint";
+import Feedback from "@/components/Feedback";
 
 Vue.config.productionTip = false
 
@@ -11,8 +12,9 @@ Vue.use(VueRouter)
 
 const routes = [
     { path: '/home', component: Overzicht },
-    { path: '/projectpagina/:id', component: OpdrachtDetail },
-    { path: '/sprint/:sprintNr', component: Sprint }
+    { path: '/projectpagina/:id', component: Projectpagina },
+    { path: '/sprint/:sprintNr', component: Sprint },
+    { path: '/feedback/:id', component: Feedback}
 ]
 
 const router = new VueRouter({

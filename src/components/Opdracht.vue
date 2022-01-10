@@ -1,13 +1,19 @@
 <template>
   <div class="tile">
     <h3>{{ data.full_name }}</h3>
+    <h3 v-if="data.fork === true">
+      Student: {{ data.owner.login }}
+    </h3>
     <p>{{ data.description }}</p>
     <ul>
       <li>
         <a :href="data.html_url" target="_blank">Bekijk op github</a>
       </li>
-      <li>
+      <li v-if="data.fork !== true">
         <router-link :to="'/projectpagina/' + data.id">Bekijk de projectpagina</router-link>
+      </li>
+      <li v-else>
+        <router-link :to="'/feedback/' + data.id">Bekijk feedback</router-link>
       </li>
     </ul>
   </div>
