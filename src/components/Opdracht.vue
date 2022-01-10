@@ -31,6 +31,7 @@ export default {
     min-height: 10em;
     max-width: 50vw;
     min-width: 300px;
+    border-radius: 2rem;
   }
 
   a {

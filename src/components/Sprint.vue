@@ -15,7 +15,7 @@
     </ul>
   </div>
     <div class="Opdrachten">
-      <div class="opdracht">
+      <div class="opdracht rounded-corners">
         <ul>
           <li v-for="assignment in assignments" :key="assignment.id">
             <Opdracht :data="assignment"></Opdracht>
@@ -91,6 +91,7 @@ export default {
     width: 60vw;
     margin: 1em 0 1em 0;
     padding: 0 4em;
+    border-radius: 2rem;
   }
 
   .title {
