@@ -5,6 +5,13 @@ import Overzicht from "@/components/Overzicht"
 import Projectpagina from "@/components/Projectpagina"
 import Sprint from "@/components/Sprint";
 import Feedback from "@/components/Feedback";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCodeBranch)
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 
