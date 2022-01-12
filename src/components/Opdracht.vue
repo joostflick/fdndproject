@@ -1,9 +1,15 @@
 <template>
   <div class="tile">
-    <h3>{{ data.full_name }}</h3>
-    <h3 v-if="data.fork === true">
-      Student: {{ data.owner.login }}
-    </h3>
+    <div class="title">
+      <h3>{{ data.full_name }}</h3>
+      <h3>{{ data.forks_count }}</h3>
+    </div>
+      <h4 v-if="data.fork === true" class="owner">
+        Student: {{ data.owner.login }}
+      </h4>
+    <h4 v-else class="owner">
+      OBA
+    </h4>
     <p>{{ data.description }}</p>
     <ul>
       <li>
@@ -30,6 +36,9 @@ export default {
 
 <style scoped>
   .tile {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
     margin: 10px;
     padding: 10px;
     background-color: #050840;
@@ -39,6 +48,23 @@ export default {
     min-width: 300px;
     border-radius: 2rem;
   }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .owner {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 0;
+  }
+
 
   a {
     color: #7ce7c9;

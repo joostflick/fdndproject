@@ -14,10 +14,13 @@
       </li>
     </ul>
   </div>
-    <div class="Opdrachten">
+    <div class="opdrachten">
+      <div class="search">
+        <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken.." >
+      </div>
       <div class="opdracht rounded-corners">
         <ul>
-          <li v-for="assignment in assignments" :key="assignment.id">
+          <li v-for="assignment in resultQuery" :key="assignment.id">
             <Opdracht :data="assignment"></Opdracht>
           </li>
         </ul>
@@ -37,6 +40,7 @@ export default {
   },
   data() {
     return {
+      searchQuery: null,
       assignments: [],
       team: 'fdnd-task',
       sprint: this.$route.params.sprintNr,
@@ -53,6 +57,17 @@ export default {
             }
           })
         })
+  },
+  computed: {
+    resultQuery(){
+      if(this.searchQuery){
+        return this.assignments.filter((item)=>{
+          return this.searchQuery.toLowerCase().split(' ').every(v => item.full_name.toLowerCase().includes(v))
+        })
+      }else{
+        return this.assignments;
+      }
+    }
   }
 }
 
@@ -75,6 +90,9 @@ export default {
   .title {
     background-color: transparent !important;
     color: #7ce7c9;
+  }
+  .opdrachten {
+    padding-top: 1em !important;
   }
 
 </style>

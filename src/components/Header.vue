@@ -5,7 +5,9 @@
       <h2 class="circled">Overzichtspagina</h2>
     </div>
     <div class="search">
-      <input class="input" type="text" placeholder="Zoeken..">
+      <input     v-bind="$attrs"
+                 v-bind:value="value"
+                 v-on:input="$emit('input', $event.target.value)" class="input" type="text" placeholder="Zoeken.." >
     </div>
   </div>
 </template>
