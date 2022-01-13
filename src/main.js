@@ -5,11 +5,14 @@ import Overzicht from "@/components/Overzicht"
 import Projectpagina from "@/components/Projectpagina"
 import Sprint from "@/components/Sprint";
 import Feedback from "@/components/Feedback";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Discussion from "@/components/Discussion";
 
-library.add(faCodeBranch)
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+library.add(faCodeBranch, faArrowDown)
+
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -21,7 +24,8 @@ const routes = [
     { path: '/home', component: Overzicht },
     { path: '/projectpagina/:id', component: Projectpagina },
     { path: '/sprint/:sprintNr', component: Sprint },
-    { path: '/feedback/:id', component: Feedback}
+    { path: '/feedback/:id', component: Feedback},
+    { path: '/discussion/:id', component: Discussion}
 ]
 
 const router = new VueRouter({

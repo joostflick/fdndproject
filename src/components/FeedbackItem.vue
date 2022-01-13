@@ -4,6 +4,12 @@
       <h1>{{ this.feedback.author }}</h1>
       <p>{{ this.feedback.dateCreated }}</p>
       <p>{{ this.feedback.content }}</p>
+      <router-link :to="{
+          path: '/discussion/' + this.feedback.id,
+          query: {
+            feedback: this.feedback
+          }
+        }">Bekijk discussie</router-link>
     </div>
   </div>
 </template>

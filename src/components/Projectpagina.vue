@@ -60,9 +60,8 @@ export default {
   background-color: #9D7BEB;
   width: 60vw;
   margin: 1em 0 1em 0;
-  padding: 0 4em 1em 2em;
+  padding: 1em 4em;
   border-radius: 2rem;
 }
-
 
 </style>

@@ -5,7 +5,7 @@
       <h2 class="circled">Overzichtspagina</h2>
     </div>
     <div class="dropdown circled">
-      <button>Selecteer sprint</button>
+      <button>Selecteer sprint  <font-awesome-icon icon="arrow-down" /></button>
       <div class="dropdown-content">
         <div v-for="sprint in this.$attrs.sprints" :key="sprint.number">
           <router-link :to="{

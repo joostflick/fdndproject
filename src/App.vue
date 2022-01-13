@@ -113,19 +113,20 @@ export default {
 </script>
 
 <style>
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #050840;
 }
 body {
   background-color: #050840;
 }
 ul {
   list-style: none;
-  padding-left: 0;
+  /*padding-left: 0;*/
 }
 
 .navigation-item > a {
@@ -155,15 +156,38 @@ ul {
 }
 
 .input {
-  color: #7ce7c9;
-  border: 3px solid #7ce7c9;
+  color: #050840;
+  border: 3px solid #050840;
   border-radius: calc(4 * 0.5rem);
   padding: 0.5rem 2rem;
-  background-color: #050840;
+  background-color: transparent;
   font-size: 1rem;
 }
 .input::placeholder {
-  color: #7ce7c9;
+  color: #050840;
   font-size: 1rem;
+}
+
+@media only screen and (max-width: 630px) {
+  .topbar {
+    display: initial !important;
+  }
+  .header {
+    flex-direction: column;
+  }
+  h1 {
+    margin-bottom: 0;
+  }
+  .circled, .squared {
+    font-size: 1em;
+  }
+  .sprint > div, .projectpagina > div, .feedback > div {
+    padding: 1em 1em !important;
+    width: 90% !important;
+  }
+  .tile {
+    width: 75vw !important;
+    padding: 15px !important;
+  }
 }
 </style>

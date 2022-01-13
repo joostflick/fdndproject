@@ -15,5 +15,11 @@ export default {
 </script>
 
 <style scoped>
-
+  .subtask {
+    display: flex;
+    flex-direction: column;
+  }
+  h3 {
+    margin-bottom: 0;
+  }
 </style>

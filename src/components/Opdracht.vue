@@ -43,10 +43,9 @@ export default {
     padding: 25px;
     background-color: #050840;
     color: white;
-    min-height: 10em;
-    max-width: 50vw;
-    min-width: 300px;
+    width: 50vw;
     border-radius: 2rem;
+    text-align: left;
   }
 
   .title {

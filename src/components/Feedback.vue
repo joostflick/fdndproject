@@ -1,7 +1,7 @@
 <template>
   <div class="feedback">
     <div>
-      <h2>Discussie</h2>
+      <h2>Feedback</h2>
       <h3>{{ data.full_name }}</h3>
       <p>{{ data.description }}</p>
     </div>
@@ -30,6 +30,7 @@ export default {
           id: 0,
           author: 'Joost de Faber',
           role: 'teacher',
+          subject: 'Debriefing',
           content: 'Dit is feedback van een docent',
           dateCreated: '10:21 09/11/2021'
         },
@@ -37,6 +38,7 @@ export default {
           id: 1,
           author: 'Marc OBA',
           role: 'opdrachtgever',
+          subject: 'Debriefing',
           content: 'Dit is feedback van een externe opdrachtgever',
           dateCreated: '10:21 09/11/2021'
         },
@@ -44,6 +46,7 @@ export default {
           id: 2,
           author: 'Harry Barry',
           role: 'student',
+          subject: 'Debriefing',
           content: 'Dit is feedback van een student',
           dateCreated: '10:21 09/11/2021'
         },
@@ -51,6 +54,7 @@ export default {
           id: 3,
           author: 'Koop Reijnders',
           role: 'teacher',
+          subject: 'Debriefing',
           content: 'Dit is feedback van een andere docent',
           dateCreated: '10:21 09/11/2021'
         },
@@ -58,6 +62,7 @@ export default {
           id: 4,
           author: 'Marc OBA',
           role: 'opdrachtgever',
+          subject: 'Debriefing',
           content: 'Dit is feedback van een externe opdrachtgever',
           dateCreated: '10:21 09/11/2021'
         }

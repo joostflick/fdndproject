@@ -7,16 +7,24 @@
     <h2>Over deze sprint</h2>
     <p>{{ this.$route.query.sprint.description }}</p>
   </div>
-  <div class="subtasks">
-    <ul>
+  <div>
+    <h3>
+      Gedragscriteria
+    </h3>
+    <ul class="subtasks">
       <li v-for="subtask in this.$route.query.sprint.gedragscriteria " :key="subtask.id">
         <Subtask :subtask="subtask"></Subtask>
       </li>
     </ul>
   </div>
     <div class="opdrachten">
-      <div class="search">
-        <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken.." >
+      <div class="topbar">
+        <h3>
+          Opdrachten
+        </h3>
+        <div class="search">
+          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken.." >
+        </div>
       </div>
       <div class="opdracht rounded-corners">
         <ul>
@@ -83,16 +91,43 @@ export default {
     background-color: #9D7BEB;
     width: 60vw;
     margin: 1em 0 1em 0;
-    padding: 0 4em;
+    padding: 1em 4em;
     border-radius: 2rem;
   }
-
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  div > h3 {
+    font-size: 1.5em;
+  }
   .title {
     background-color: transparent !important;
     color: #7ce7c9;
   }
   .opdrachten {
     padding-top: 1em !important;
+  }
+  .opdracht > ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .subtasks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-left: 0
+  }
+  .subtasks > li {
+    width: 10em;
+    border-radius: 2rem;
+    padding-left: 1em;
+    padding-right: 1em;
+    background-color: #7ce7c9;
+    margin: 10px;
+    min-height: 210px;
   }
 
 </style>
