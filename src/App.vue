@@ -113,7 +113,10 @@ export default {
 </script>
 
 <style>
-
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -126,7 +129,11 @@ body {
 }
 ul {
   list-style: none;
-  /*padding-left: 0;*/
+  padding-left: 0;
+}
+a {
+  color: #7ce7c9;
+  font-size: 1.2em;
 }
 
 .navigation-item > a {
@@ -188,6 +195,9 @@ ul {
   .tile {
     width: 75vw !important;
     padding: 15px !important;
+  }
+  ul {
+    padding-left: 0;
   }
 }
 </style>

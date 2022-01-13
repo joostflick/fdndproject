@@ -1,7 +1,7 @@
 <template>
 <div class="sprint">
   <div class="title">
-    <h1>{{ this.sprint }} - {{ this.$route.query.sprint.name }}</h1>
+    <h1>Sprint {{ this.sprint }} - {{ this.$route.query.sprint.name }}</h1>
   </div>
   <div class="about">
     <h2>Over deze sprint</h2>
@@ -23,7 +23,7 @@
           Opdrachten
         </h3>
         <div class="search">
-          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken.." >
+          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
         </div>
       </div>
       <div class="opdracht rounded-corners">
@@ -113,6 +113,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 0;
   }
   .subtasks {
     display: flex;
@@ -121,10 +122,8 @@ export default {
     padding-left: 0
   }
   .subtasks > li {
-    width: 10em;
+    width: 13em;
     border-radius: 2rem;
-    padding-left: 1em;
-    padding-right: 1em;
     background-color: #7ce7c9;
     margin: 10px;
     min-height: 210px;

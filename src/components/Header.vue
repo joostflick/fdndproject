@@ -1,9 +1,11 @@
 <template>
   <div class="header">
-    <div class="logos">
-      <h2 class="squared">fdnd</h2>
-      <h2 class="circled">Overzichtspagina</h2>
-    </div>
+    <router-link to="/">
+      <div class="logos">
+        <h2 class="squared">fdnd</h2>
+        <h2 class="circled">Overzichtspagina</h2>
+      </div>
+    </router-link>
     <div class="dropdown circled">
       <button>Selecteer sprint  <font-awesome-icon icon="arrow-down" /></button>
       <div class="dropdown-content">
@@ -33,6 +35,9 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .header a {
+    text-decoration: none;
   }
   .logos {
     display: flex;

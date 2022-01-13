@@ -2,7 +2,8 @@
   <div class="feedback">
     <div>
       <h2>Feedback</h2>
-      <h3>{{ data.full_name }}</h3>
+      <h3>Repo: {{ data.name }}</h3>
+      <h3>Student: {{ data.owner.login }}</h3>
       <p>{{ data.description }}</p>
     </div>
     <div>
@@ -31,39 +32,31 @@ export default {
           author: 'Joost de Faber',
           role: 'teacher',
           subject: 'Debriefing',
-          content: 'Dit is feedback van een docent',
+          content: 'Misschien kun je bij de debriefing nog even kijken welke onderwerpen de opdrachtgever heeft aangegeven het belangrijkste te vinden.',
           dateCreated: '10:21 09/11/2021'
         },
         {
           id: 1,
           author: 'Marc OBA',
           role: 'opdrachtgever',
-          subject: 'Debriefing',
-          content: 'Dit is feedback van een externe opdrachtgever',
+          subject: 'Read-me',
+          content: 'Zou je de read me nog aan kunnen vullen? Ik kan momenteel de inhoud niet zien',
           dateCreated: '10:21 09/11/2021'
         },
         {
           id: 2,
           author: 'Harry Barry',
           role: 'student',
-          subject: 'Debriefing',
-          content: 'Dit is feedback van een student',
+          subject: 'index.html',
+          content: 'Zou ik dit stukje code over mogen nemen van je?',
           dateCreated: '10:21 09/11/2021'
         },
         {
           id: 3,
           author: 'Koop Reijnders',
           role: 'teacher',
-          subject: 'Debriefing',
-          content: 'Dit is feedback van een andere docent',
-          dateCreated: '10:21 09/11/2021'
-        },
-        {
-          id: 4,
-          author: 'Marc OBA',
-          role: 'opdrachtgever',
-          subject: 'Debriefing',
-          content: 'Dit is feedback van een externe opdrachtgever',
+          subject: 'Oplevering',
+          content: 'Ziet er goed uit, maar er missen nog een aantal dingen in je oplevering',
           dateCreated: '10:21 09/11/2021'
         }
       ]
@@ -88,7 +81,7 @@ export default {
 }
 .feedback > div {
   background-color: #9D7BEB;
-  width: 30vw;
+  width: 50vw;
   margin: 1em 0 1em 0;
   padding: 0 3em 1em 3em;
   border-radius: 2rem;

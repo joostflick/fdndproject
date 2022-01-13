@@ -51,6 +51,7 @@ h3 {
 ul {
   list-style-type: none;
   padding: 0;
+  background-color: #9D7BEB;
 }
 li {
   display: inline-block;

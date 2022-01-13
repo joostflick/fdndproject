@@ -68,9 +68,4 @@ export default {
     padding-left: 0;
   }
 
-
-  a {
-    color: #7ce7c9;
-  }
-
 </style>

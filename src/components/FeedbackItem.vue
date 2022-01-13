@@ -2,6 +2,7 @@
   <div class="feedbackitem">
     <div :class="'tile ' + this.feedback.role">
       <h1>{{ this.feedback.author }}</h1>
+      <p>Feedback op: {{ this.feedback.subject }}</p>
       <p>{{ this.feedback.dateCreated }}</p>
       <p>{{ this.feedback.content }}</p>
       <router-link :to="{
@@ -35,17 +36,22 @@ export default {
   border-radius: 2rem;
 }
 
+.tile > a {
+  color: #050840;
+}
+
 .teacher {
   background-color: #42b983;
+  border-style: dotted;
 }
 
 .opdrachtgever {
+  background-color: #42b983;
   border-style: solid;
 }
 
 .student {
-  background-color: #c4f5dd;
-  color: #050840;
+  background-color: #42b983;
 }
 
 </style>
