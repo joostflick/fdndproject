@@ -1,17 +1,6 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <ul>
-      <li v-for="sprint in sprints" :key="sprint.number" class="navigation-item">
-        <router-link :to="{
-          path: '/sprint/' + sprint.number,
-          query: {
-            sprint: sprint
-          }
-        }">
-          {{ sprint.number }} - {{ sprint.name }}</router-link>
-      </li>
-    </ul>
+    <Header :sprints="sprints"></Header>
     <router-view :key="$route.fullPath"></router-view>
   </div>
 </template>
@@ -136,6 +125,7 @@ body {
 }
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 .navigation-item > a {
