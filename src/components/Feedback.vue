@@ -6,10 +6,10 @@
       <h3>Student: {{ data.owner.login }}</h3>
       <p>{{ data.description }}</p>
     </div>
-    <div>
-<div v-for="item in feedback" :key="item.id">
-          <FeedbackItem :feedback="item"></FeedbackItem>
-</div>
+    <div class="feedback-items">
+      <div v-for="item in feedback" :key="item.id">
+                <FeedbackItem :feedback="item"></FeedbackItem>
+      </div>
     </div>
   </div>
 </template>
@@ -85,5 +85,10 @@ export default {
   margin: 1em 0 1em 0;
   padding: 0 3em 1em 3em;
   border-radius: 2rem;
+}
+.feedback-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 </style>

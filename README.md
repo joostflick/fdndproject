@@ -1,6 +1,6 @@
 # fdnd-platform
 
-## Project setup
+## Installatie
 ```
 npm install
 ```

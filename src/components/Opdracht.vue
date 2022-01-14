@@ -13,7 +13,7 @@
     <p>{{ data.description }}</p>
     <ul>
       <li>
-        <a :href="data.html_url" target="_blank">Bekijk op github</a>
+        <a :href="data.html_url" target="_blank">Bekijk op github <font-awesome-icon icon="external-link-alt" /></a>
       </li>
       <li v-if="!data.fork">
         <router-link :to="'/projectpagina/' + data.id">Bekijk de projectpagina</router-link>

@@ -5,13 +5,15 @@ import Overzicht from "@/components/Overzicht"
 import Projectpagina from "@/components/Projectpagina"
 import Sprint from "@/components/Sprint";
 import Feedback from "@/components/Feedback";
+import PageNotFound from "@/components/PageNotFound"
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import Discussion from "@/components/Discussion";
 
-library.add(faCodeBranch, faArrowDown)
+library.add(faCodeBranch, faArrowDown, faExternalLinkAlt)
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -26,7 +28,8 @@ const routes = [
     { path: '/projectpagina/:id', component: Projectpagina },
     { path: '/sprint/:sprintNr', component: Sprint },
     { path: '/feedback/:id', component: Feedback},
-    { path: '/discussion/:id', component: Discussion}
+    { path: '/discussion/:id', component: Discussion},
+    { path: "*", component: PageNotFound }
 ]
 
 const router = new VueRouter({

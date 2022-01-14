@@ -1,7 +1,7 @@
 <template>
   <div class="feedbackitem">
     <div :class="'tile ' + this.feedback.role">
-      <h1>{{ this.feedback.author }}</h1>
+      <h2>{{ this.feedback.author }}</h2>
       <p>Feedback op: {{ this.feedback.subject }}</p>
       <p>{{ this.feedback.dateCreated }}</p>
       <p>{{ this.feedback.content }}</p>
@@ -25,14 +25,16 @@ export default {
 </script>
 
 <style scoped>
+.feedbackitem {
+  height: 85%;
+}
 .tile {
   margin: 10px;
   padding: 10px;
   background-color: #050840;
-  color: white;
-  min-height: 10em;
-  max-width: 50vw;
-  min-width: 300px;
+  /*color: white;*/
+  height: 100%;
+  width: 300px;
   border-radius: 2rem;
 }
 

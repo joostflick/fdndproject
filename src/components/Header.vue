@@ -53,7 +53,7 @@ export default {
     position: relative;
   }
   .dropdown-content {
-    display: none;
+    max-height: 0;
     position: absolute;
     left: 0.7em;
     top: 2.1em;
@@ -61,6 +61,7 @@ export default {
     overflow: auto;
     background-color: #7ce7c9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    transition: all 0.2s linear;
   }
   .dropdown-content a {
     display: block;
@@ -68,11 +69,14 @@ export default {
     padding: 5px;
     text-decoration: none;
   }
+  .dropdown-content::-webkit-scrollbar {
+    display: none;
+  }
   .dropdown-content a:hover {
     color: #FFFFFF;
     background-color: #050840;
   }
   .dropdown:hover .dropdown-content {
-    display: block;
+    max-height: 500px;
   }
 </style>
