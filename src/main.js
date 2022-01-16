@@ -23,7 +23,7 @@ Vue.config.productionTip = false
 Vue.use(VueRouter)
 
 const routes = [
-    { path: '/', redirect: '/sprint/1' },
+    { path: '/', redirect: '/home/' },
     { path: '/home', component: Overzicht },
     { path: '/projectpagina/:id', component: Projectpagina },
     { path: '/sprint/:sprintNr', component: Sprint },

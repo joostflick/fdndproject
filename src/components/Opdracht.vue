@@ -7,6 +7,9 @@
       <h4 v-if="data.fork" class="owner">
         Student: {{ data.owner.login }}
       </h4>
+    <h4 v-if="data.homepage" class="owner">
+      <a :href="data.homepage ">Bekijk oplevering</a>
+    </h4>
     <h4 v-else class="owner">
       {{ data.topics[1] }}
     </h4>

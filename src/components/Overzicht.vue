@@ -1,11 +1,60 @@
 <template>
-  <div>
+  <div class="overzicht">
     <h1>FDND repos</h1>
-    <ul>
-      <li v-for="repo in repos" :key="repo.id">
-        <Opdracht :data="repo"></Opdracht>
-      </li>
-    </ul>
+    <div>
+      In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
+      Om een specifieke sprint te bekijken kun je deze rechtsboven selecteren.
+    </div>
+    <div class="tab">
+      <button class="tablinks" v-on:click="tabOpen = 0">Highlights</button>
+      <button class="tablinks" v-on:click="tabOpen = 1">Alle opdrachten</button>
+      <button class="tablinks" v-on:click="tabOpen = 2">Studentenwerk</button>
+    </div>
+    <div v-if="tabOpen === 0">
+      <div class="topbar">
+        <h3>
+          Highlights ({{ this.resultQueryHighlights.length }})
+        </h3>
+        <div class="search">
+          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
+        </div>
+      </div>
+      <ul>
+        <li v-for="repo in resultQueryHighlights" :key="repo.id">
+          <Opdracht :data="repo"></Opdracht>
+        </li>
+      </ul>
+    </div>
+    <div v-if="tabOpen === 1">
+      <div class="topbar">
+        <h3>
+          Alle opdrachten ({{ this.resultQueryAllAssignments.length }})
+        </h3>
+        <div class="search">
+          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
+        </div>
+      </div>
+      <ul>
+        <li v-for="repo in resultQueryAllAssignments" :key="repo.id">
+          <Opdracht :data="repo"></Opdracht>
+        </li>
+      </ul>
+    </div>
+    <div v-if="tabOpen === 2">
+      <div class="topbar">
+        <h3>
+          Alle studentenwerk ({{ this.resultQueryAllForks.length }})
+        </h3>
+        <div class="search">
+          <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
+        </div>
+      </div>
+      <ul>
+        <li v-for="repo in this.resultQueryAllForks" :key="repo.id">
+          <Opdracht :data="repo"></Opdracht>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -19,34 +68,114 @@ export default {
   methods: {
     getGHRepos(team) {
       let result = []
-      fetch('https://api.github.com/orgs/' + team + '/repos')
+      fetch('https://api.github.com/orgs/' + team + '/repos', {headers: {
+          authorization: process.env.VUE_APP_ENV_GITTOKEN
+        }})
           .then(res => res.json())
           .then(json => {
-            result = json
+            this.repos = json
+            this.repos.forEach(repo => {
+              fetch(repo.forks_url, {headers: {
+                  authorization: process.env.VUE_APP_ENV_GITTOKEN
+                }})
+                .then(res => res.json())
+                .then(json => {
+                  json.forEach(fork => {
+                    this.allForks.push(fork)
+                    // add starred repositories to the starred forks array
+                    if(fork.stargazers_count > 0){
+                      this.starredForks.push(fork)
+                      // order by forks
+                      this.starredForks = this.starredForks.sort((a, b) => {
+                        return a.forks_count[1] - b.forks_count[1]
+                        })
+                    }
+                  })
+                })
+            })
           })
       return result
+    },
+    getForks() {
+      fetch('https://api.github.com/repositories/' + this.id)
+          .then(res => res.json())
+          .then(json => {
+            this.repo = json
+            fetch(this.repo.forks_url).then(res => res.json())
+                .then(json => {
+                  this.forks = json
+                })
+          })
     }
   },
   data() {
     return {
       team: 'fdnd-task',
-      repos: []
+      repos: [],
+      allForks: [],
+      starredForks: [],
+      tabOpen: 0,
+      searchQuery: null
     }
   },
   mounted: function() {
-    fetch('https://api.github.com/orgs/' + this.team + '/repos')
-        .then(res => res.json())
-        .then(json => {
-          this.repos = json
+    this.getGHRepos(this.team)
+  },
+  computed: {
+    resultQueryHighlights(){
+      if(this.searchQuery){
+        return this.starredForks.filter((item)=>{
+          return this.searchQuery.toLowerCase().split(' ').every(v => item.full_name.toLowerCase().includes(v))
         })
+      }else{
+        return this.starredForks;
+      }
+    },
+    resultQueryAllAssignments(){
+      if(this.searchQuery){
+        return this.repos.filter((item)=>{
+          return this.searchQuery.toLowerCase().split(' ').every(v => item.full_name.toLowerCase().includes(v))
+        })
+      }else{
+        return this.repos;
+      }
+    },
+    resultQueryAllForks(){
+      if(this.searchQuery){
+        return this.allForks.filter((item)=>{
+          return this.searchQuery.toLowerCase().split(' ').every(v => item.full_name.toLowerCase().includes(v))
+        })
+      }else{
+        return this.allForks;
+      }
+    }
   }
 }
 
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div > h3 {
+  font-size: 1.5em;
+}
+.overzicht {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.overzicht > div {
+  background-color: #9D7BEB;
+  width: 60vw;
+  margin: 1em 0 1em 0;
+  padding: 1em 4em;
+  border-radius: 2rem;
 }
 ul {
   list-style-type: none;
