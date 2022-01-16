@@ -3,9 +3,10 @@
     <h1>FDND repos</h1>
     <div>
       In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
-      Om een specifieke sprint te bekijken kun je deze rechtsboven selecteren.
+      Om een sprint te bekijken kun je deze rechtsboven selecteren. <br>
+      Hieronder kun je de highlights, opdrachten en het studentenwerk zien.
     </div>
-    <div class="tab">
+    <div class="tabs">
       <button :class="'tablinks circled left ' + (tabOpen ===0 ? 'selected' : '')" v-on:click="tabOpen = 0">Highlights</button>
       <button :class="'tablinks circled middle ' + (tabOpen ===1 ? 'selected' : '')" v-on:click="tabOpen = 1">Alle opdrachten</button>
       <button :class="'tablinks circled right ' + (tabOpen ===2 ? 'selected' : '')" v-on:click="tabOpen = 2">Studentenwerk</button>
@@ -21,7 +22,7 @@
       </div>
       <ul>
         <li v-for="repo in resultQueryHighlights" :key="repo.id">
-          <Opdracht :data="repo"></Opdracht>
+          <Opdracht :data="repo" :highlight="true"></Opdracht>
         </li>
       </ul>
     </div>
@@ -151,6 +152,11 @@ export default {
 }
 div > h3 {
   font-size: 1.5em;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .circled {
   color: #050840;

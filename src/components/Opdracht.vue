@@ -3,12 +3,13 @@
     <div class="title">
       <h3>{{ data.full_name }}</h3>
       <h3 v-if="!data.fork"><font-awesome-icon icon="code-branch" />{{ ' ' + data.forks_count }}</h3>
+      <h3 v-if="highlight"><font-awesome-icon icon="star" />{{ ' ' + data.stargazers_count }}</h3>
     </div>
       <h4 v-if="data.fork" class="owner">
         Student: {{ data.owner.login }}
       </h4>
     <h4 v-if="data.homepage" class="owner">
-      <a :href="data.homepage ">Bekijk oplevering</a>
+      <a :href="data.homepage" target="_blank">Bekijk oplevering</a>
     </h4>
     <h4 v-else class="owner">
       {{ data.topics[1] }}
@@ -32,7 +33,8 @@
 export default {
   name: "Opdracht",
   props: {
-    data: Object
+    data: Object,
+    highlight: Boolean
   }
 }
 </script>

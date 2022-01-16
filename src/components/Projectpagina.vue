@@ -11,7 +11,14 @@
           {{topic}}
         </li>
       </ul>
-      <a :href="this.repo.html_url">Bekijk deze opdracht op github</a>
+      <div v-if="markdownContent">
+        <button v-on:click="toggleInstructions()">{{showInstructions ? 'Verberg instructies' : 'Laat instructies zien'}}</button>
+        <div v-if="showInstructions">
+          <markdown-it-vue class='md-content' :content="markdownContent" :options="MDoptions"></markdown-it-vue>
+          <button v-on:click="toggleInstructions()">Hide instructions</button>
+        </div>
+      </div>
+      <a :href="this.repo.html_url" target="_blank">Bekijk deze opdracht op github</a>
     </div>
     <div class="tile">
       <h2>Forks:</h2>
@@ -36,12 +43,34 @@ export default {
     Opdracht
   },
   methods: {
+    toggleInstructions() {
+      if (this.showInstructions === true) {
+        this.showInstructions = false
+      } else {
+        this.showInstructions = true
+      }
+    }
   },
   data() {
     return {
       id: this.$route.params.id,
       repo: {},
-      forks: []
+      forks: [],
+      markdownContent: '',
+      showInstructions: Boolean,
+      MDoptions: {
+        markdownIt: {
+          linkify: true,
+          html: true,
+          validateLink: true
+        },
+        linkAttributes: {
+          attrs: {
+            target: '_blank',
+            rel: 'noopener'
+          }
+        }
+      }
     }
   },
   mounted: function() {
@@ -49,11 +78,17 @@ export default {
         .then(res => res.json())
         .then(json => {
           this.repo = json
+          fetch('https://raw.githubusercontent.com/'+ this.repo.full_name + '/main/docs/INSTRUCTIONS.md')
+              .then(res => res.text())
+              .then(data => {
+                this.markdownContent = data
+              })
           fetch(this.repo.forks_url).then(res => res.json())
               .then(json => {
                 this.forks = json
               })
         })
+    this.showInstructions = false;
   }
 }
 </script>

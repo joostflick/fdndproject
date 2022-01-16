@@ -123,7 +123,6 @@ h1 {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #050840;
 }
 body {
@@ -177,6 +176,10 @@ a {
   font-size: 1rem;
 }
 
+.markdown-body img {
+  max-width: 60vw;
+}
+
 .fade-enter-active, .fade-leave-active {
   transition: opacity .2s;
 }
@@ -203,6 +206,9 @@ a {
   .sprint > div, .projectpagina > div, .feedback > div, .overzicht > div {
     padding: 1em 1em !important;
     width: 90% !important;
+  }
+  .markdown-body img {
+    max-width: 90% !important;
   }
   .tile {
     width: 75vw !important;
