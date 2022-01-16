@@ -6,9 +6,9 @@
       Om een specifieke sprint te bekijken kun je deze rechtsboven selecteren.
     </div>
     <div class="tab">
-      <button class="tablinks" v-on:click="tabOpen = 0">Highlights</button>
-      <button class="tablinks" v-on:click="tabOpen = 1">Alle opdrachten</button>
-      <button class="tablinks" v-on:click="tabOpen = 2">Studentenwerk</button>
+      <button :class="'tablinks circled left ' + (tabOpen ===0 ? 'selected' : '')" v-on:click="tabOpen = 0">Highlights</button>
+      <button :class="'tablinks circled middle ' + (tabOpen ===1 ? 'selected' : '')" v-on:click="tabOpen = 1">Alle opdrachten</button>
+      <button :class="'tablinks circled right ' + (tabOpen ===2 ? 'selected' : '')" v-on:click="tabOpen = 2">Studentenwerk</button>
     </div>
     <div v-if="tabOpen === 0">
       <div class="topbar">
@@ -151,6 +151,29 @@ export default {
 }
 div > h3 {
   font-size: 1.5em;
+}
+.circled {
+  color: #050840;
+  justify-self: start;
+  border: 3px solid #050840;
+  font-weight: 100;
+  padding: 0.5rem 2rem;
+  box-shadow: none;
+  margin-left: 0rem;
+  background-color: #9D7BEB;
+}
+.selected {
+  background-color: #050840;
+  color: white;
+}
+.left {
+  border-radius: 2rem 0 0 2rem;
+}
+.middle {
+  border-radius: 0;
+}
+.right {
+  border-radius: 0 2rem 2rem 0;
 }
 .overzicht {
 

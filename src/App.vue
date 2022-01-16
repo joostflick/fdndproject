@@ -191,13 +191,16 @@ a {
   .header {
     flex-direction: column;
   }
+  .tablinks {
+    border-radius: 2rem !important;
+  }
   h1 {
     margin-bottom: 0;
   }
   .circled, .squared {
     font-size: 1em;
   }
-  .sprint > div, .projectpagina > div, .feedback > div {
+  .sprint > div, .projectpagina > div, .feedback > div, .overzicht > div {
     padding: 1em 1em !important;
     width: 90% !important;
   }

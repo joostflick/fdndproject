@@ -1,8 +1,5 @@
 <template>
 <div class="sprint">
-  <h3 v-if="!this.$route.query.sprint">
-    Selecteer rechtsboven een sprint om te beginnen
-  </h3>
   <div class="title">
     <h1>{{ this.sprint }}</h1>
   </div>
