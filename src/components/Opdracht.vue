@@ -1,7 +1,7 @@
 <template>
-  <div class="tile">
+  <div :class="'tile ' + (data.fork ? 'fork' : '')">
     <div class="title">
-      <h3>{{ data.full_name }}</h3>
+      <h3>{{ data.name }}</h3>
       <h3 v-if="!data.fork"><font-awesome-icon icon="code-branch" />{{ ' ' + data.forks_count }}</h3>
       <h3 v-if="highlight"><font-awesome-icon icon="star" />{{ ' ' + data.stargazers_count }}</h3>
     </div>
@@ -9,7 +9,7 @@
         Student: {{ data.owner.login }}
       </h4>
     <h4 v-if="data.homepage" class="owner">
-      <a :href="data.homepage" target="_blank">Bekijk oplevering</a>
+      <a :href="data.homepage" target="_blank">Bekijk website <font-awesome-icon icon="external-link-alt" /></a>
     </h4>
     <h4 v-else class="owner">
       {{ data.topics[1] }}
@@ -46,11 +46,14 @@ export default {
     text-align: left;
     margin: 10px;
     padding: 25px;
-    background-color: #050840;
+    background-color: var(--blueberry);
     color: white;
     width: 50vw;
     border-radius: 2rem;
     text-align: left;
+  }
+  .fork {
+    background-color: var(--blueberry);
   }
 
   .title {

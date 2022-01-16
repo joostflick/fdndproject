@@ -1,14 +1,18 @@
 <template>
-  <div class="feedback">
+  <div class="content">
+    <h1>Feedback</h1>
     <div>
-      <h2>Feedback</h2>
-      <h3>Repo: {{ data.name }}</h3>
-      <h3>Student: {{ data.owner.login }}</h3>
+          <h3>Student: </h3>
+        <p>{{ data.owner.login }}</p>
+      <h3>Repo:</h3>
+      <p>{{ data.name }}</p>
+      <a :href="data.html_url" target="_blank">Bekijk deze opdracht op github  <font-awesome-icon icon="external-link-alt" /></a>
+      <h3>Omschrijving:</h3>
       <p>{{ data.description }}</p>
     </div>
     <div class="feedback-items">
       <div v-for="item in feedback" :key="item.id">
-                <FeedbackItem :feedback="item"></FeedbackItem>
+        <FeedbackItem :feedback="item"></FeedbackItem>
       </div>
     </div>
   </div>

@@ -1,8 +1,6 @@
 <template>
-<div class="sprint">
-  <div class="title">
-    <h1>{{ this.sprint }}</h1>
-  </div>
+<div class="content">
+  <h1>{{ this.sprint }}</h1>
   <div class="about">
     <h2>Over deze sprint</h2>
     <p>De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.
@@ -28,7 +26,7 @@
         </div>
       </div>
       <div class="opdracht rounded-corners">
-        <ul>
+        <ul class="items">
           <li v-for="assignment in resultQuery" :key="assignment.id">
             <Opdracht :data="assignment"></Opdracht>
           </li>
@@ -90,38 +88,13 @@ export default {
 </script>
 
 <style scoped>
-  .sprint {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .sprint > div {
-    background-color: #9D7BEB;
-    width: 60vw;
-    margin: 1em 0 1em 0;
-    padding: 1em 4em;
-    border-radius: 2rem;
-  }
-  .topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  div > h3 {
-    font-size: 1.5em;
-  }
+
   .title {
     background-color: transparent !important;
     color: #7ce7c9;
   }
   .opdrachten {
     padding-top: 1em !important;
-  }
-  .opdracht > ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-left: 0;
   }
   .subtasks {
     display: flex;

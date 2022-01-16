@@ -1,5 +1,5 @@
 <template>
-  <div class="overzicht">
+  <div class="content">
     <h1>FDND repos</h1>
     <div>
       In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
@@ -20,7 +20,7 @@
           <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
         </div>
       </div>
-      <ul>
+      <ul class="items">
         <li v-for="repo in resultQueryHighlights" :key="repo.id">
           <Opdracht :data="repo" :highlight="true"></Opdracht>
         </li>
@@ -35,7 +35,7 @@
           <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
         </div>
       </div>
-      <ul>
+      <ul class="items">
         <li v-for="repo in resultQueryAllAssignments" :key="repo.id">
           <Opdracht :data="repo"></Opdracht>
         </li>
@@ -50,7 +50,7 @@
           <input v-model="searchQuery" class="input" type="text" placeholder="Zoeken..." >
         </div>
       </div>
-      <ul>
+      <ul class="items">
         <li v-for="repo in this.resultQueryAllForks" :key="repo.id">
           <Opdracht :data="repo"></Opdracht>
         </li>
@@ -62,7 +62,7 @@
 <script>
 import Opdracht from "@/components/Opdracht";
 export default {
-  name: 'HelloWorld',
+  name: 'Overzicht',
   components: {
     Opdracht
   },
@@ -145,32 +145,17 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.topbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-div > h3 {
-  font-size: 1.5em;
-}
+
 .tabs {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: transparent;
 }
-.circled {
-  color: #050840;
-  justify-self: start;
-  border: 3px solid #050840;
-  font-weight: 100;
-  padding: 0.5rem 2rem;
-  box-shadow: none;
-  margin-left: 0rem;
-  background-color: #9D7BEB;
-}
+
 .selected {
-  background-color: #050840;
-  color: white;
+  background-color: var(--lavender);
+  color: var(--blueberry);
 }
 .left {
   border-radius: 2rem 0 0 2rem;
@@ -180,31 +165,5 @@ div > h3 {
 }
 .right {
   border-radius: 0 2rem 2rem 0;
-}
-.overzicht {
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-.overzicht > div {
-  background-color: #9D7BEB;
-  width: 60vw;
-  margin: 1em 0 1em 0;
-  padding: 1em 4em;
-  border-radius: 2rem;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  background-color: #9D7BEB;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
 }
 </style>

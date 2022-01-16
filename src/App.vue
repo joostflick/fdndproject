@@ -115,54 +115,101 @@ export default {
 </script>
 
 <style>
-h1 {
-  margin-top: 0;
-  margin-bottom: 0;
+/*Defining the main colors*/
+:root {
+  --blueberry: #050542;
+  --turqouise: #66e5bf;
+  --lavender: #a675f5;
 }
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #050840;
-}
+/*Background color*/
 body {
-  background-color: #050840;
+  background-color: var(--blueberry);
 }
+/*Remove default list styling*/
 ul {
   list-style: none;
   padding-left: 0;
 }
+/*Setting font & default color*/
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--blueberry);
+}
+h1 {
+  margin-top: 1em;
+  margin-bottom: 0;
+  color: white;
+}
+/*Styling of the root element of the different screens*/
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*Styling the toplevel elements*/
+.content > div {
+  background-color: var(--turqouise);
+  width: 60vw;
+  margin: 1em 0 1em 0;
+  padding: 1em 4em;
+  border-radius: 2rem;
+}
+.tile a {
+  color: white;
+}
+/*Center the different repos & assignments*/
+.content .items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+}
+/*Headers for the tiles*/
+.content > div > h3, .topbar > h3 {
+  font-size: 1.5em;
+}
+/*Topbar for elements with title + searchbar*/
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*Style links*/
 a {
-  color: #7ce7c9;
-  font-size: 1.2em;
+  color: var(--blueberry);
+  font-size: 1em;
 }
-
-.navigation-item > a {
-  color: #7ce7c9;
-}
-
+/*Circled items*/
 .circled {
-  color: #7ce7c9;
+  color: var(--turqouise);
   justify-self: start;
-  border: 3px solid #7ce7c9;
+  border: 3px solid var(--turqouise);
   font-weight: 100;
   border-radius: calc(4 * 0.5rem);
   padding: 0.5rem 2rem;
-  box-shadow: -0.6rem 0.3rem 0 0 #7ce7c9;
+  box-shadow: -0.6rem 0.3rem 0 0 var(--turqouise);
   margin-left: 1rem;
 }
-
+button {
+  font-size: 1.25em;
+  border: none;
+  background-color: transparent;
+  color: var(--turqouise);
+}
+/*Squared items*/
 .squared {
-  color: #7ce7c9;
+  color: var(--turqouise);
   justify-self: start;
-  border: 3px solid #7ce7c9;
+  border: 3px solid var(--turqouise);
   font-weight: 100;
   border-radius: 0.5rem;
   padding: 0.5rem 2rem;
-  box-shadow: -0.6rem 0.3rem 0 0 #7ce7c9;
+  box-shadow: -0.6rem 0.3rem 0 0 var(--turqouise);
   margin-left: 1rem;
 }
-
+/*Styling inputs*/
 .input {
   color: #050840;
   border: 3px solid #050840;
@@ -203,7 +250,7 @@ a {
   .circled, .squared {
     font-size: 1em;
   }
-  .sprint > div, .projectpagina > div, .feedback > div, .overzicht > div {
+  .content > div {
     padding: 1em 1em !important;
     width: 90% !important;
   }

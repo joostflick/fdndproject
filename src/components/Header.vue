@@ -64,12 +64,6 @@ export default {
   .logos {
     display: flex;
   }
-  button {
-    border: none;
-    background-color: transparent;
-    color: #7ce7c9;
-    font-size: 1em;
-  }
   .dropdown {
     display: inline-block;
     position: relative;

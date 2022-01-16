@@ -1,8 +1,11 @@
 <template>
-  <div class="projectpagina">
-    <div class="tile">
-      <h2>{{ this.repo.name }}</h2>
+  <div class="content">
+    <h1>Projectpagina</h1>
+    <div>
+      <h3>Project:</h3>
+      <h4>{{ this.repo.name }}</h4>
       <p>{{ this.repo.full_name }}</p>
+      <a :href="this.repo.html_url" target="_blank">Bekijk deze opdracht op github  <font-awesome-icon icon="external-link-alt" /></a>
       <h3>Omschrijving:</h3>
       <p>{{ this.repo.description }}</p>
       <h3>Onderwerpen:</h3>
@@ -11,18 +14,18 @@
           {{topic}}
         </li>
       </ul>
-      <div v-if="markdownContent">
-        <button v-on:click="toggleInstructions()">{{showInstructions ? 'Verberg instructies' : 'Laat instructies zien'}}</button>
+    </div>
+    <button class='circled' v-on:click="toggleInstructions()">{{showInstructions ? 'Verberg instructies' : 'Laat instructies zien '}} <font-awesome-icon v-if="!showInstructions" icon="arrow-down" /><font-awesome-icon v-if="showInstructions" icon="arrow-up" /></button>
+    <div v-if="markdownContent && showInstructions">
         <div v-if="showInstructions">
           <markdown-it-vue class='md-content' :content="markdownContent" :options="MDoptions"></markdown-it-vue>
           <button v-on:click="toggleInstructions()">Hide instructions</button>
         </div>
       </div>
-      <a :href="this.repo.html_url" target="_blank">Bekijk deze opdracht op github</a>
-    </div>
+    <button v-if="showInstructions" class="circled" v-on:click="toggleInstructions()">Verberg instructies <font-awesome-icon v-if="showInstructions" icon="arrow-up" /></button>
     <div class="tile">
       <h2>Forks:</h2>
-      <ul>
+      <ul class="items">
         <li v-for="fork in forks" :key="fork.id">
           <Opdracht :data="fork"></Opdracht>
         </li>
@@ -94,32 +97,17 @@ export default {
 </script>
 
 <style scoped>
-.projectpagina {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.projectpagina > div {
-  background-color: #9D7BEB;
-  width: 60vw;
-  margin: 1em 0 1em 0;
-  padding: 1em 4em;
-  border-radius: 2rem;
-}
 .topics {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap
+  justify-content: left;
+  flex-wrap: wrap;
+  text-align: center;
 }
 .topic {
-  background-color: #42b983;
+  background-color: var(--lavender);
   border-radius: 2em;
   min-width: 3em;
   padding: 0.6em;
   margin: 0.2em;
 }
-.tile > a {
-  color: #050840;
-}
-
 </style>

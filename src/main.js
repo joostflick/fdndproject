@@ -12,12 +12,13 @@ import { faCodeBranch } from '@fortawesome/free-solid-svg-icons'
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
 import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 import Discussion from "@/components/Discussion";
 import MarkDownItVue from "markdown-it-vue";
 
 Vue.component('markdown-it-vue', MarkDownItVue)
 
-library.add(faCodeBranch, faArrowDown, faExternalLinkAlt, faStar)
+library.add(faCodeBranch, faArrowDown, faExternalLinkAlt, faStar, faArrowUp)
 
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
