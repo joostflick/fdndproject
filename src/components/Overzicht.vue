@@ -95,17 +95,6 @@ export default {
             })
           })
       return result
-    },
-    getForks() {
-      fetch('https://api.github.com/repositories/' + this.id)
-          .then(res => res.json())
-          .then(json => {
-            this.repo = json
-            fetch(this.repo.forks_url).then(res => res.json())
-                .then(json => {
-                  this.forks = json
-                })
-          })
     }
   },
   data() {

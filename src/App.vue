@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :sprints="sprints"></Header>
+    <Header></Header>
     <transition name="fade">
       <router-view :key="$route.fullPath"></router-view>
     </transition>
@@ -17,98 +17,98 @@ export default {
   },
   data() {
     return {
-      sprints: [
-        {
-          number: 1,
-          name: 'Your Tribe',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        },
-        {
-          number: 2,
-          name: 'The Client',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        },
-        {
-          number: 3,
-          name: 'All Human',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        },
-        {
-          number: 4,
-          name: 'The Campaign',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        },
-        {
-          number: 5,
-          name: 'Fix the Flow',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        },
-        {
-          number: 6,
-          name: 'The Startup',
-          description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
-              '\n' +
-              'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
-          gedragscriteria: [
-            {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
-            {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
-            {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
-            {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
-            {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
-          ],
-          onderwerpen: []
-        }
-      ]
+      // sprints: [
+      //   {
+      //     number: 1,
+      //     name: 'Your Tribe',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   },
+      //   {
+      //     number: 2,
+      //     name: 'The Client',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   },
+      //   {
+      //     number: 3,
+      //     name: 'All Human',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   },
+      //   {
+      //     number: 4,
+      //     name: 'The Campaign',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   },
+      //   {
+      //     number: 5,
+      //     name: 'Fix the Flow',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   },
+      //   {
+      //     number: 6,
+      //     name: 'The Startup',
+      //     description: 'De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.\n' +
+      //         '\n' +
+      //         'De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.',
+      //     gedragscriteria: [
+      //       {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+      //       {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+      //       {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+      //       {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+      //       {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      //     ],
+      //     onderwerpen: []
+      //   }
+      // ]
     }
   },
 }

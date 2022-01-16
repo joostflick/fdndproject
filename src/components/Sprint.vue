@@ -4,18 +4,19 @@
     Selecteer rechtsboven een sprint om te beginnen
   </h3>
   <div class="title">
-    <h1>Sprint {{ this.sprint }} - {{ this.$route.query.sprint.name }}</h1>
+    <h1>{{ this.sprint }}</h1>
   </div>
   <div class="about">
     <h2>Over deze sprint</h2>
-    <p>{{ this.$route.query.sprint.description }}</p>
+    <p>De opleiding FDND bestaat uit een tribe met daarin een aantal squads, in een squad zitten studenten en docenten. Het eerste semester begint met de sprint Your Tribe: presenteer jezelf en je squad met een eigen website. In deze sprint maak je kennis met je studiegenoten en de opleiding. Je leert je eigen online profielpagina maken en gaat met je Squad een gezamenlijke website maken.
+      De focus in deze sprint ligt op kennismaken, samenwerken en hoe je interface en vormgevingsprincipes kan toepassen voor een responsive design.</p>
   </div>
   <div>
     <h3>
       Gedragscriteria
     </h3>
     <ul class="subtasks">
-      <li v-for="subtask in this.$route.query.sprint.gedragscriteria " :key="subtask.id">
+      <li v-for="subtask in gedragscriteria " :key="subtask.id">
         <Subtask :subtask="subtask"></Subtask>
       </li>
     </ul>
@@ -55,6 +56,13 @@ export default {
       assignments: [],
       team: 'fdnd-task',
       sprint: this.$route.params.sprintNr,
+      gedragscriteria: [
+        {id: 0, title: 'Development lifecycle', description: 'Je volgt binnen projecten de aangeboden fasering van de development-lifecycle.'},
+        {id: 1, title: 'Principes & conventies', description: 'Je past aangeboden principes en conventies op het gebied van frontend, interface design en vormgeving toe.'},
+        {id: 2, title: 'Teams', description: 'Je werkt in teams, laat je hierbij begeleiden en geeft feedback aan teamleden.'},
+        {id: 3, title: 'Verantwoording', description: 'Je draagt verantwoording voor je eigen resultaten en verwerkt ontvangen feedback.'},
+        {id: 4, title: 'Houding', description: 'Je luistert naar wat een ander zegt en neemt dit serieus.'}
+      ]
     }
   },
   mounted: function() {
@@ -63,7 +71,7 @@ export default {
         .then(res => res.json())
         .then(json => {
           json.forEach(repo => {
-            if(repo.topics && repo.topics.some(e => e === ('sprint-' + this.sprint))) {
+            if(repo.topics && repo.topics.some(e => e === (this.sprint))) {
                 this.assignments.push(repo)
             }
           })

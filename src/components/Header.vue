@@ -9,13 +9,10 @@
     <div class="dropdown circled">
       <button>Selecteer sprint  <font-awesome-icon icon="arrow-down" /></button>
       <div class="dropdown-content">
-        <div v-for="sprint in this.$attrs.sprints" :key="sprint.number">
+        <div v-for="sprint in uniqueSprints" :key="sprint">
           <router-link :to="{
-          path: '/sprint/' + sprint.number,
-          query: {
-            sprint: sprint
-          }
-        }">{{ sprint.number }} - {{ sprint.name }}</router-link>
+          path: '/sprint/' + sprint
+        }">{{ sprint }}</router-link>
         </div>
       </div>
     </div>
@@ -26,7 +23,32 @@
 export default {
   name: "Header",
   props: {
-    data: []
+    data: [],
+  },
+  data() {
+    return {
+      team: 'fdnd-task',
+      uniqueSprints: []
+    }
+  },
+  mounted: function() {
+    let sprints = []
+    fetch('https://api.github.com/orgs/' + this.team + '/repos', {headers: {
+        authorization: process.env.VUE_APP_ENV_GITTOKEN
+      }})
+        .then(res => res.json())
+        // get unique sprints to identify which sprints are present
+        .then(json => {
+          sprints = [...new Set(json.map(item => {
+            item.topics.forEach(topic => {
+              if (topic.includes('sprint')){
+                sprints.push(topic)
+              }
+              this.uniqueSprints = [...new Set(sprints)]
+            })
+          }))];
+        }
+        )
   }
 }
 </script>
