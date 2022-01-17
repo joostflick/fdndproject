@@ -244,6 +244,9 @@ button {
   .tablinks {
     border-radius: 2rem !important;
   }
+  .tabs > button {
+    margin-bottom: 0.5rem;
+  }
   h1 {
     margin-bottom: 0;
   }
