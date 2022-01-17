@@ -1,9 +1,12 @@
 <template>
   <div class="feedbackitem">
     <div :class="'tile ' + this.feedback.role">
-      <h2>{{ this.feedback.author }}</h2>
-      <p>Feedback op: {{ this.feedback.subject }}</p>
-      <p>{{ this.feedback.dateCreated }}</p>
+      <div class="topbar">
+        <h2>{{ this.feedback.author }}</h2>
+        <p>{{ this.feedback.dateCreated }}</p>
+      </div>
+      <p class="role">{{ this.feedback.role }}</p>
+      <p> <b> Onderwerp: {{ this.feedback.subject }} </b></p>
       <p>{{ this.feedback.content }}</p>
       <router-link :to="{
           path: '/discussion/' + this.feedback.id,
@@ -25,16 +28,22 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+  margin-bottom: 0;
+}
+.topbar > p {
+  margin-bottom: 0;
+}
 .feedbackitem {
   height: 85%;
 }
 .tile {
   margin: 10px;
-  padding: 10px;
-  background-color: #050840;
+  padding: 15px;
+  background-color: var(--lavender);
   /*color: white;*/
   height: 100%;
-  width: 300px;
+  width: 320px;
   border-radius: 2rem;
 }
 
@@ -42,18 +51,24 @@ export default {
   color: #050840;
 }
 
-.teacher {
-  background-color: #42b983;
-  border-style: dotted;
+.Docent > .role {
+  background-color: #6F201E;
+  color: white;
 }
 
-.opdrachtgever {
-  background-color: #42b983;
-  border-style: solid;
+.Opdrachtgever > .role {
+  background-color: #007E61;
 }
 
-.student {
-  background-color: #42b983;
+.Student > .role {
+  background-color: #958BB6;
+}
+
+.role {
+  border-radius: 2em;
+  min-width: 3em;
+  padding: 0.6em;
+  margin: 0.2em;
 }
 
 </style>

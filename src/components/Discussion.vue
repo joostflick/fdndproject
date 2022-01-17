@@ -1,9 +1,9 @@
 <template>
-  <div class="discussion">
+  <div class="content">
     <p>Feedback over:</p>
     <h1>{{this.$route.query.feedback.subject}}</h1>
     <div class="tile">
-      <div class="top-bar">
+      <div class="topbar">
         <h3>{{this.$route.query.feedback.author}}</h3>
         <p>{{this.$route.query.feedback.dateCreated}}</p>
       </div>
@@ -11,11 +11,11 @@
       <p>{{this.$route.query.feedback.content}}</p>
     </div>
     <div class="tile">
-      <div class="top-bar">
+      <div class="topbar">
         <h3>Student 1</h3>
         <p>{{this.$route.query.feedback.dateCreated}}</p>
       </div>
-      <p class="role">student</p>
+      <p class="role Student">Student</p>
       <p>Ga ik doen, ik zal een berichtje sturen wanneer de verandering doorgevoerd is</p>
     </div>
     <div class="tile">
@@ -31,31 +31,11 @@ export default {
 </script>
 
 <style scoped>
-.top-bar {
-  display: flex;
-  justify-content: space-between;
-}
 a {
   color: #050840;
 }
-.discussion > p {
+.content > p {
   color: #7ce7c9;
-}
-h1 {
-  color: #7ce7c9;
-}
-.discussion {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.discussion > div {
-  background-color: #9D7BEB;
-  width: 30vw;
-  margin: 1em 0 1em 0;
-  padding: 1em 3em 1em 3em;
-  border-radius: 2rem;
 }
 .role {
   background-color: #42b983;
@@ -64,20 +44,17 @@ h1 {
   margin: 0.2em;
   width: fit-content;
 }
-.tile {
-  text-align: left;
-}
-.teacher {
-  background-color: #42b983;
-  border-style: dotted;
+
+.Docent {
+  background-color: #6F201E;
+  color: white;
 }
 
-.opdrachtgever {
-  background-color: #42b983;
-  border-style: solid;
+.Opdrachtgever {
+  background-color: #007E61;
 }
 
-.student {
-  background-color: #42b983;
+.Student {
+  background-color: #958BB6;
 }
 </style>

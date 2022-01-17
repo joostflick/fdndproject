@@ -3,7 +3,7 @@
     <div class="title">
       <h3>{{ data.name }}</h3>
       <h3 v-if="!data.fork"><font-awesome-icon icon="code-branch" />{{ ' ' + data.forks_count }}</h3>
-      <h3 v-if="highlight"><font-awesome-icon icon="star" />{{ ' ' + data.stargazers_count }}</h3>
+      <h3 v-if="data.fork"><font-awesome-icon icon="star" />{{ ' ' + data.stargazers_count }}</h3>
     </div>
       <h4 v-if="data.fork" class="owner">
         Student: {{ data.owner.login }}

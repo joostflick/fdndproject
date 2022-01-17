@@ -105,7 +105,7 @@ export default {
   .subtasks > li {
     width: 13em;
     border-radius: 2rem;
-    background-color: #7ce7c9;
+    background-color: var(--lavender);
     margin: 10px;
     min-height: 210px;
   }
