@@ -1,10 +1,12 @@
 <template>
   <div class="content">
-    <h1>FDND repos</h1>
+    <h1>FDND tasks</h1>
     <div>
-      In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
-      Om een sprint te bekijken kun je deze rechtsboven selecteren. <br>
-      Hieronder kun je de highlights, opdrachten en het studentenwerk zien.
+      Dit is de FDND tasks applicatie. <br><br>
+
+      In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.<br>
+      Om een sprint te bekijken kun je deze rechtsboven in het menu selecteren. <br><br>
+      Hieronder kun je een aantal uitgelichte opdrachten, alle opdrachten en het studentenwerk zien.
     </div>
     <div class="tabs">
       <button :class="'tablinks circled left ' + (tabOpen ===0 ? 'selected' : '')" v-on:click="tabOpen = 0">Highlights</button>

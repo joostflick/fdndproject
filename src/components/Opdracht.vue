@@ -1,7 +1,8 @@
 <template>
   <div :class="'tile ' + (data.fork ? 'fork' : '')">
     <div class="title">
-      <h3>{{ data.name }}</h3>
+      <h3 v-if="data.fork">{{ data.full_name }}</h3>
+      <h3 v-if="!data.fork">{{ data.name }}</h3>
       <h3 v-if="!data.fork"><font-awesome-icon icon="code-branch" />{{ ' ' + data.forks_count }}</h3>
       <h3 v-if="data.fork"><font-awesome-icon icon="star" />{{ ' ' + data.stargazers_count }}</h3>
     </div>

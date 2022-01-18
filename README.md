@@ -1,24 +1,20 @@
 # fdnd-platform
 
+Dit is de FDND tasks applicatie. <br><br>
+
+In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
+
 ## Installatie
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Project runnen
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Project builden om deze te kunnen publishen
 ```
 npm run build
 ```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
