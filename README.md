@@ -177,9 +177,11 @@ Conditional rendering of the template in [Overzicht component](src/components/Op
   </div>
 </template>
 
-### Data structure API response
+```
+<details>
+    <summary> Data structure API response </summary>
 
-```json
+```javascript
     {
         "id": 438262366,
         "node_id": "R_kgDOGh9aXg",
@@ -298,3 +300,4 @@ Conditional rendering of the template in [Overzicht component](src/components/Op
         }
     }
   ```
+  </details>
