@@ -18,6 +18,9 @@ npm run serve
 
 Om het project goed lokaal te runnen moet je een eigen github token aanvragen en deze in de project environment variables opslaan.
 Zonder deze dit token kun je een beperkt aantal requests doen.
+```
+VUE_APP_ENV_GITTOKEN: YOUR_GITHUB_TOKEN
+```
 
 ### Project builden om deze te kunnen publishen
 ```
