@@ -4,6 +4,8 @@ Dit is de FDND tasks applicatie. <br><br>
 
 In deze applicatie kun je de opdrachten en het studentenwerk van FDND bekijken.
 
+De gehele applicatie is clientside en gemaakt met het vue framework.
+
 ## Installatie
 ```
 npm install
@@ -20,6 +22,30 @@ Zonder deze dit token kun je een beperkt aantal requests doen.
 ### Project builden om deze te kunnen publishen
 ```
 npm run build
+```
+
+### Dependencies
+- MarkDownItVue
+
+Read-me's van projecten converteren naar html templates om deze weer te geven op de projectpagina
+
+- Fontawesome icons
+
+Iconen 
+
+
+
+### Routes
+```javascript
+const routes = [
+    { path: '/', redirect: '/home/' },
+    { path: '/home', component: Overzicht },
+    { path: '/projectpagina/:id', component: Projectpagina },
+    { path: '/sprint/:sprintNr', component: Sprint },
+    { path: '/feedback/:id', component: Feedback},
+    { path: '/discussion/:id', component: Discussion},
+    { path: "*", component: PageNotFound }
+]
 ```
 
 ### Code snippets
